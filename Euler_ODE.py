@@ -24,10 +24,12 @@ def NumSolve(t, x0, dt):
 
 
 x_euler=NumSolve(t, x0, dt)
-
-dist=[x[i]-x_euler[i] for i in range(len(t))] #Distance between each point from the actual solution
-error=0
-for i in range(len(dist)):
-	error=error + fabs(dist[i])
-error=error/len(dist)
-print("The average error between numerical and actual solution for dx/dt=1-x^2 is " + str(round(error,5)) + "\n This was computed using " + str(tf/dt) + " time steps")
+if x!=None:
+	dist=[x[i]-x_euler[i] for i in range(len(t))] #Distance between each point from the actual solution
+	error=0
+	for i in range(len(dist)):
+		error=error + fabs(dist[i])
+	error=error/len(dist)
+	print("The average error between numerical and actual solution for dx/dt=1-x^2 is " + str(round(error,5)) + "\n This was computed using " + str(tf/dt) + " time steps")
+else: 
+	print("Numerical solution complete, stored as x_euler.")

@@ -6,5 +6,7 @@ a decent approximation of the next point, we use a simpler version of Euler's me
 	x[n+1]=x[n]+f(x[n])dt, where x'=f(x), dt being your time step.
 The information from this predictor point is f(x[n+1]), and using this new direction, we
 recalculate an updated guess for our new point by averaging the two directions.
-x[n+1]=x[n]+dt/2*(f(x[n])+f(x[n+1])). 
+x[n+1]=x[n]+dt/2*(f(x[n])+f(x[n+1])). After it calculates 100 points (from t=0 to t=5),
+it will spit out the difference between the analytic solution vector and the numerical 
+solution vector, if an analytic solution exists.
 	
