@@ -11,7 +11,7 @@ it will spit out the difference between the analytic solution vector and the num
 solution vector, if an analytic solution exists. Else, a variable called x_euler will 
 be created with the numerical solution for 100 steps stored.
 
-Example:
+Example::
 	For dx/dt=f(x), where f(x)=1-x^2, with initial condition x(0)=0, solved
 		analytically yields x(t)=tanh(t). Let t be a vector of evenly spaced
 		points in time from 0 to 5s seperated by 0.05s. Then the program will
@@ -24,4 +24,9 @@ Example:
 		the average pointwise distance between the analytical solution and the 
 		numerical solution. Else, it notifies the user that the solution vector
 		is ready to be used.
-	
+		
+
+Optimization::
+	Before cython implementation: 146ms
+	After  cython implementation: 4.15ms
+	~35x faster

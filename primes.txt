@@ -1,0 +1,25 @@
+def getPrimes(n):
+    limn = n+1
+    primes = dict()
+    for i in range(2, limn): primes[i] = True
+
+    for i in primes:
+        factors = range(i,limn, i)
+        for f in factors[1:]:
+            primes[f] = False
+    return [i for i in primes if primes[i]==True]
+
+cpdef getPrimes(int n):
+    cdef limn = n+1
+    primes = dict()
+    for i in range(2, limn): primes[i] = True
+
+    for i in primes:
+        factors = range(i,limn, i)
+        for f in factors[1:]:
+            primes[f] = False
+    return [i for i in primes if primes[i]==True]
+	
+Python Time: 22.9ms
+Cython Time: 11.6ms
+Speed Up: 2x Faster

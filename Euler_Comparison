@@ -1,0 +1,36 @@
+def NumSolve(t, x0, dt):
+	"""
+	Takes a list of times, an initial condition, and a time step
+		to solve an ODE numerically using Euler's method, returning
+		a points along a solution curve. The default equation to solve
+		will be dx=1-x^2. If you wish to change the function, change 
+		dx and dx_pp accordingly by following the comment guidelines.
+	"""
+	sol=[x0]
+	for i in range(len(t)):
+		dx = 1 - (sol[i])**2                 #The derivative we will be solving for
+		pp = sol[i] + dt*dx                  #The predictor point
+		dx_pp = 1 - pp**2				     #Plugging predictor point into the derivative
+		sol.append(sol[i] + (dt/2)*(dx + dx_pp)) #The improved Euler method
+	return sol
+
+
+%cython
+cpdef NumSolve(t,int x0,double dt):
+	"""
+	Takes a list of times, an initial condition, and a time step
+		to solve an ODE numerically using Euler's method, returning
+		a points along a solution curve. The default equation to solve
+		will be dx=1-x^2. If you wish to change the function, change
+		dx and dx_pp accordingly by following the comment guidelines.
+	"""
+	sol=[x0]
+	for i in range(len(t)):
+		dx = 1 - (sol[i])**2                 #The derivative we will be solving for
+		pp = sol[i] + dt*dx                  #The predictor point
+		dx_pp = 1 - pp**2				     #Plugging predictor point into the derivative
+		sol.append(sol[i] + (dt/2)*(dx + dx_pp)) #The improved Euler method
+	return sol
+
+	
+Speed Up: 85x Faster

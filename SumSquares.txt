@@ -1,0 +1,10 @@
+%cython
+cpdef int SumSquares(int n):
+    return n*(n+1)*(n+2)/6
+	
+def SumSquares(n):
+    return n*(n+1)*(n+2)/6
+	
+Python Time: 1.93 microseconds
+Cython Time: 229 nanoseconds
+Result: ~8.5times faster for Cython
