@@ -33,4 +33,3 @@ cpdef NumSolve(t,int x0,double dt):
 	return sol
 
 	
-Speed Up: 85x Faster
