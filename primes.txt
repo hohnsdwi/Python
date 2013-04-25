@@ -9,6 +9,7 @@ def getPrimes(n):
             primes[f] = False
     return [i for i in primes if primes[i]==True]
 
+%cython
 cpdef getPrimes(int n):
     cdef limn = n+1
     primes = dict()
