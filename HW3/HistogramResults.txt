@@ -1,0 +1,7 @@
+Conjecture: Primes occur when prime p%n is congruent to a, where a is coprime to n. 
+
+Histogram for n=15 shows primes at 1, 2, 4, 7, 8, 11, 13, 14. Nontrivial factors of 15 are 3 and 5, which are not factors of the histogram points of interest.
+
+For n=21, primes occurred at all values v such that gcd(v,n)=1.
+
+For n=30, the same thing occurred. 
